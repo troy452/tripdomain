@@ -77,10 +77,6 @@
       border-radius: 20px;
       padding: 25px;
       box-shadow: 0 0 30px rgba(0, 0, 0, .4);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
       min-height: 250px; 
     }
 
@@ -109,6 +105,7 @@
 </head>
 <body>
 
+  <!-- Hero Section -->
   <section class="hero">
     <h1>Find Cheap Flights & Travel Deals Worldwide</h1>
     <p>
@@ -120,21 +117,23 @@
     </a>
   </section>
 
+  <!-- Search Widget Section -->
   <section class="widget-section" id="search">
     <div class="widget-container">
 
-      <iframe 
-        src="https://tp.media/widget?promo_id=7926&shmarker=733931&campaign_id=100&trs=534178&locale=en&type=search_form&powered_by=false" 
-        width="100%" 
-        height="240" 
-        frameborder="0" 
-        scrolling="no"
-        style="border: none; border-radius: 12px; width: 100%; max-width: 1150px;">
-      </iframe>
+      <!-- Target element matching your dynamic canal ID -->
+      <div id="tp-widget-534178"></div>
+
+      <!-- 
+        Universal responsive search script matching your 
+        exact account (733931) and source channel (534178)
+      -->
+      <script src="https://tp.media/content?campaign_id=100&shmarker=733931&trs=534178&locale=en&type=search_form&powered_by=false&container=tp-widget-534178" async charset="utf-8"></script>
 
     </div>
   </section>
 
+  <!-- Footer Section -->
   <footer>
     &copy; 2026 Travel Deals. All rights reserved.
   </footer>
