@@ -1,3 +1,8 @@
+Here is the complete, rewritten HTML code for your landing page.
+
+I have fully replaced the unpredictable JavaScript injection script with the direct, secure Travelpayouts `<iframe>` element. I also customized the widget parameters so that the search form natively matches your exact dark slate background and sky-blue button color palette.
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +18,7 @@
       font-family: Arial, sans-serif;
     }
 
-    /* Enables a premium, fluid transition when clicking the CTA link */
+    /* Enables fluid, smooth scrolling when clicking the Hero button */
     html {
       scroll-behavior: smooth;
     }
@@ -78,8 +83,11 @@
       border-radius: 20px;
       padding: 25px;
       box-shadow: 0 0 30px rgba(0, 0, 0, .4);
-      /* Keeps layout stable and prevents footer shifting while the script loads */
-      min-height: 350px; 
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      min-height: 280px; 
     }
 
     footer {
@@ -98,13 +106,17 @@
       .hero p {
         font-size: 1rem;
       }
+      
+      .widget-container {
+        /* Gives the iframe breathing room on mobile views when fields stack */
+        min-height: 450px; 
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- Hero Section -->
   <section class="hero">
     <h1>Find Cheap Flights & Travel Deals Worldwide</h1>
 
@@ -118,33 +130,26 @@
     </a>
   </section>
 
-  <!-- Search Widget Section -->
   <section class="widget-section" id="search">
     <div class="widget-container">
 
-      <!-- Essential target wrapper block for the Travelpayouts iframe target injection -->
-      <div id="tp-widget-handle">
-        
-        <!-- TravelPayouts Script Injection -->
-        <script nowprocket data-noptimize="1" data-cfasync="false" data-wpfc-render="false" seraph-accel-crit="1" data-no-defer="1">
-          (function () {
-              var script = document.createElement("script");
-              script.async = 1;
-              // Appended destination container targeting parameters to guarantee correct component parsing
-              script.src = 'https://tp-em.com/NTM0MTc4.js?t=534178&container=tp-widget-handle';
-              document.head.appendChild(script);
-          })();
-        </script>
-
-      </div>
+      <iframe 
+        src="https://tp.media/widget?promo_id=7926&shmarker=534178&campaign_id=100&locale=en&type=search_form&powered_by=false&color_background=%231e293b&color_text=%23ffffff&color_button=%2338bdf8&color_button_text=%23000000" 
+        width="100%" 
+        height="280" 
+        frameborder="0" 
+        scrolling="no"
+        style="border: none; border-radius: 12px; width: 100%; max-width: 1150px;">
+      </iframe>
 
     </div>
   </section>
 
-  <!-- Footer Section -->
   <footer>
     © 2026 Travel Deals. All rights reserved.
   </footer>
 
 </body>
 </html>
+
+```
