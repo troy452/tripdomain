@@ -23,7 +23,6 @@
       overflow-x: hidden;
     }
 
-    /* Hero Section with background placeholder image */
     .hero {
       min-height: 100vh;
       display: flex;
@@ -66,9 +65,8 @@
       transform: scale(1.05);
     }
 
-    /* Search Widget Section container */
     .widget-section {
-      padding: 80px 20px;
+      padding: 60px 20px;
       background: #111827;
     }
 
@@ -77,9 +75,9 @@
       margin: auto;
       background: #1e293b;
       border-radius: 20px;
-      padding: 30px;
+      padding: 25px;
       box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
-      min-height: 300px; /* Gives the container initial structure while script loads */
+      min-height: 280px; 
     }
 
     footer {
@@ -98,9 +96,14 @@
       .hero p {
         font-size: 1rem;
       }
+      
+      .widget-container {
+        min-height: 450px; 
+      }
     }
   </style>
 
+  <!-- The Travelpayouts script configuration -->
   <script nowprocket data-noptimize="1" data-cfasync="false" data-wpfc-render="false" seraph-accel-crit="1" data-no-defer="1">
     (function () {
       var script = document.createElement("script");
@@ -112,22 +115,32 @@
 </head>
 <body>
 
+  <!-- Hero Section -->
   <section class="hero">
     <h1>Find Cheap Flights & Travel Deals Worldwide</h1>
     <p>
-      Compare flight prices, discover destinations, and book your next adventure at the best price.
+      Compare flight prices, discover destinations,
+      and book your next adventure at the best price.
     </p>
     <a href="#search" class="cta">
       Search Flights
     </a>
   </section>
 
+  <!-- Search Widget Section -->
   <section class="widget-section" id="search">
     <div class="widget-container">
-      
-      </div>
+
+      <!-- 
+        Travelpayouts scripts look for standard hooks like 'tp-widget-default'
+        or container divs inside your sections to populate their styling.
+      -->
+      <div id="tp-widget-default"></div>
+
+    </div>
   </section>
 
+  <!-- Footer Section -->
   <footer>
     &copy; 2026 Travel Deals. All rights reserved.
   </footer>
