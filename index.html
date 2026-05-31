@@ -6,90 +6,97 @@
   <title>Travel Deals & Flight Booking</title>
 
   <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family:Arial, sans-serif;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
     }
 
-    body{
-      background:#0f172a;
-      color:white;
-      overflow-x:hidden;
+    /* Enables a premium, fluid transition when clicking the CTA link */
+    html {
+      scroll-behavior: smooth;
     }
 
-    .hero{
-      min-height:100vh;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      align-items:center;
-      text-align:center;
-      padding:40px 20px;
+    body {
+      background: #0f172a;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px 20px;
       background:
-        linear-gradient(rgba(15,23,42,.8), rgba(15,23,42,.9)),
+        linear-gradient(rgba(15, 23, 42, .8), rgba(15, 23, 42, .9)),
         url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1600&auto=format&fit=crop') center/cover;
     }
 
-    .hero h1{
-      font-size:3rem;
-      max-width:900px;
-      line-height:1.2;
-      margin-bottom:20px;
+    .hero h1 {
+      font-size: 3rem;
+      max-width: 900px;
+      line-height: 1.2;
+      margin-bottom: 20px;
     }
 
-    .hero p{
-      max-width:700px;
-      font-size:1.2rem;
-      color:#cbd5e1;
-      margin-bottom:40px;
+    .hero p {
+      max-width: 700px;
+      font-size: 1.2rem;
+      color: #cbd5e1;
+      margin-bottom: 40px;
     }
 
-    .cta{
-      background:#38bdf8;
-      color:#000;
-      padding:15px 35px;
-      border-radius:50px;
-      text-decoration:none;
-      font-weight:bold;
-      transition:.3s;
+    .cta {
+      background: #38bdf8;
+      color: #000;
+      padding: 15px 35px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: .3s;
     }
 
-    .cta:hover{
-      background:#0ea5e9;
-      transform:scale(1.05);
+    .cta:hover {
+      background: #0ea5e9;
+      transform: scale(1.05);
     }
 
-    .widget-section{
-      padding:60px 20px;
-      background:#111827;
+    .widget-section {
+      padding: 60px 20px;
+      background: #111827;
     }
 
-    .widget-container{
-      max-width:1200px;
-      margin:auto;
-      background:#1e293b;
-      border-radius:20px;
-      padding:20px;
-      box-shadow:0 0 30px rgba(0,0,0,.4);
+    .widget-container {
+      max-width: 1200px;
+      margin: auto;
+      background: #1e293b;
+      border-radius: 20px;
+      padding: 25px;
+      box-shadow: 0 0 30px rgba(0, 0, 0, .4);
+      /* Keeps layout stable and prevents footer shifting while the script loads */
+      min-height: 350px; 
     }
 
-    footer{
-      text-align:center;
-      padding:30px;
-      background:#020617;
-      color:#94a3b8;
-      font-size:.9rem;
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #020617;
+      color: #94a3b8;
+      font-size: .9rem;
     }
 
-    @media(max-width:768px){
-      .hero h1{
-        font-size:2rem;
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
       }
 
-      .hero p{
-        font-size:1rem;
+      .hero p {
+        font-size: 1rem;
       }
     }
   </style>
@@ -97,6 +104,7 @@
 
 <body>
 
+  <!-- Hero Section -->
   <section class="hero">
     <h1>Find Cheap Flights & Travel Deals Worldwide</h1>
 
@@ -110,22 +118,30 @@
     </a>
   </section>
 
+  <!-- Search Widget Section -->
   <section class="widget-section" id="search">
     <div class="widget-container">
 
-      <!-- TravelPayouts Script -->
-      <script nowprocket data-noptimize="1" data-cfasync="false" data-wpfc-render="false" seraph-accel-crit="1" data-no-defer="1">
-        (function () {
-            var script = document.createElement("script");
-            script.async = 1;
-            script.src = 'https://tp-em.com/NTM0MTc4.js?t=534178';
-            document.head.appendChild(script);
-        })();
-      </script>
+      <!-- Essential target wrapper block for the Travelpayouts iframe target injection -->
+      <div id="tp-widget-handle">
+        
+        <!-- TravelPayouts Script Injection -->
+        <script nowprocket data-noptimize="1" data-cfasync="false" data-wpfc-render="false" seraph-accel-crit="1" data-no-defer="1">
+          (function () {
+              var script = document.createElement("script");
+              script.async = 1;
+              // Appended destination container targeting parameters to guarantee correct component parsing
+              script.src = 'https://tp-em.com/NTM0MTc4.js?t=534178&container=tp-widget-handle';
+              document.head.appendChild(script);
+          })();
+        </script>
+
+      </div>
 
     </div>
   </section>
 
+  <!-- Footer Section -->
   <footer>
     © 2026 Travel Deals. All rights reserved.
   </footer>
