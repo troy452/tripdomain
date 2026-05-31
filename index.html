@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Travel Deals & Flight Booking</title>
+  <title>Travel Deals & Booking Hub</title>
 
   <style>
     * {
@@ -24,7 +24,7 @@
     }
 
     .hero {
-      min-height: 100vh;
+      min-height: 80vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -66,8 +66,47 @@
     }
 
     .widget-section {
-      padding: 60px 20px;
+      padding: 40px 15px 80px 15px;
       background: #111827;
+    }
+
+    /* Tab Menu Navigation Styles */
+    .tabs-nav {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      max-width: 1200px;
+      margin: 0 auto 20px auto;
+      overflow-x: auto;
+      padding-bottom: 5px;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .tab-btn {
+      background: #1e293b;
+      color: #94a3b8;
+      border: 1px solid #334155;
+      padding: 12px 24px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .tab-btn:hover {
+      background: #334155;
+      color: white;
+    }
+
+    .tab-btn.active {
+      background: #38bdf8;
+      color: #000;
+      border-color: #38bdf8;
     }
 
     .widget-container {
@@ -75,9 +114,24 @@
       margin: auto;
       background: #1e293b;
       border-radius: 20px;
-      padding: 25px;
+      padding: 20px;
       box-shadow: 0 0 30px rgba(0, 0, 0, .4);
-      min-height: 250px; 
+      min-height: 300px; 
+    }
+
+    /* Tab Content Controls */
+    .tab-panel {
+      display: none;
+      animation: fadeIn 0.4s ease;
+    }
+
+    .tab-panel.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(5px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     footer {
@@ -90,15 +144,26 @@
 
     @media (max-width: 768px) {
       .hero h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
       }
 
       .hero p {
         font-size: 1rem;
       }
+
+      .tabs-nav {
+        justify-content: flex-start;
+        padding-left: 5px;
+      }
+
+      .tab-btn {
+        padding: 10px 18px;
+        font-size: 0.85rem;
+      }
       
       .widget-container {
-        min-height: 450px; 
+        min-height: 480px; 
+        padding: 10px;
       }
     }
   </style>
@@ -107,26 +172,47 @@
 
   <!-- Hero Section -->
   <section class="hero">
-    <h1>Find Cheap Flights & Travel Deals Worldwide</h1>
+    <h1>Your Complete Travel Booking Hub</h1>
     <p>
-      Compare flight prices, discover destinations,
-      and book your next adventure at the best price.
+      Compare flight options, plan unforgettable tours, book private transfers, or reserve car rentals at the guaranteed best rates.
     </p>
     <a href="#search" class="cta">
-      Search Flights
+      Explore Deals
     </a>
   </section>
 
-  <!-- Search Widget Section -->
+  <!-- Search Widget & Tab Section -->
   <section class="widget-section" id="search">
+    
+    <!-- Tab Controls Navigation -->
+    <div class="tabs-nav">
+      <button class="tab-btn active" onclick="switchTab(event, 'flights-tab')">✈️ Flights</button>
+      <button class="tab-btn" onclick="switchTab(event, 'tours-tab')">🏛️ Tours</button>
+      <button class="tab-btn" onclick="switchTab(event, 'transport-tab')">🚍 Transfers</button>
+      <button class="tab-btn" onclick="switchTab(event, 'cars-tab')">🚗 Car Rentals</button>
+    </div>
+
+    <!-- Central Widget Rendering Container -->
     <div class="widget-container">
 
-      <!-- The placeholder target div using your tracking ID (trs=534178) -->
-      <div class="tp-widget-534178">
-        
-        <!-- Your brand new active script placed directly into the layout block -->
+      <!-- Panel 1: Flights (Kiwi Widget) -->
+      <div id="flights-tab" class="tab-panel active">
         <script async src="https://tpscr.com/content?currency=usd&trs=534178&shmarker=733931&locale=en&powered_by=true&limit=4&primary_color=00AE98&results_background_color=FFFFFF&form_background_color=FFFFFF&campaign_id=111&promo_id=3411" charset="utf-8"></script>
-        
+      </div>
+
+      <!-- Panel 2: Tours Widget -->
+      <div id="tours-tab" class="tab-panel">
+        <script async src="https://tpscr.com/content?currency=USD&trs=534178&shmarker=733931&locale=en&city_id=2&category=4&amount=3&powered_by=true&campaign_id=137&promo_id=4497" charset="utf-8"></script>
+      </div>
+
+      <!-- Panel 3: Transportation / Kiwitaxi Widget -->
+      <div id="transport-tab" class="tab-panel">
+        <script async src="https://tpscr.com/content?currency=USD&trs=534178&shmarker=733931&locale=en&from=&to=&country=&powered_by=true&height=&wtype=true&transfers_limit=10&bg_color=%23f5f5f5&button_color=%23239a54&button_font_color=%23ffffff&button_hover_color=%230274da&border_color=%23f9ac1a&input_font_color=%23c8ced4&input_bg_color=%23ffffff&input_label_color=%23c8ced4&icon_bg_color=%23ffffff&icon_arrow_color=%236c7c8c&icon_bg_color_mobile=%23f9ac1a&icon_arrow_color_mobile=%23ffffff&autocomplete_font_color=%23373f47&autocomplete_bg_color=%23ffffff&autocomplete_font_color_active=%23ffffff&autocomplete_bg_color_active=%23239a54&loader_color=%23f9ac1a&empty_color=%23373f47&info_bg_color=%23fff0cc&info_icon_color=%234a4a4a&info_caption_color=%234a4a4a&class_background=%23ffffff&class_font_color=%23373f47&class_header_color=%236c7c8c&class_button_background=%2326a65b&class_button_font_color=%23ffffff&class_button_background_hover=%230274da&class_comment_background=%23bfc0c4&class_comment_font=%23bfc0c4&more_background=&more_background_hover=&more_font_color=%230267c1&notification_background=%23f6f1ec&notification_border_color=%23e37f17&notification_color=%23373f47&campaign_id=1&promo_id=2949" charset="utf-8"></script>
+      </div>
+
+      <!-- Panel 4: Car Rental Widget -->
+      <div id="cars-tab" class="tab-panel">
+        <script async src="https://tpscr.com/content?trs=534178&shmarker=733931&powered_by=true&country=153&lang=en&width=100&background=light&logo=true&header=true&gearbox=false&cars=false&border=true&footer=true&campaign_id=87&promo_id=4322" charset="utf-8"></script>
       </div>
 
     </div>
@@ -136,6 +222,23 @@
   <footer>
     &copy; 2026 Travel Deals. All rights reserved.
   </footer>
+
+  <!-- Simple JavaScript to control tab toggles -->
+  <script>
+    function switchTab(event, tabId) {
+      // Hide all panels
+      const panels = document.querySelectorAll('.tab-panel');
+      panels.forEach(panel => panel.classList.remove('active'));
+
+      // Remove active state from all buttons
+      const buttons = document.querySelectorAll('.tab-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+
+      // Display the selected tab panel and set button active
+      document.getElementById(tabId).classList.add('active');
+      event.currentTarget.classList.add('active');
+    }
+  </script>
 
 </body>
 </html>
