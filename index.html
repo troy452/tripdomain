@@ -24,7 +24,7 @@
     }
 
     .hero {
-      min-height: 80vh;
+      min-height: 65vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -70,32 +70,35 @@
       background: #111827;
     }
 
-    /* Tab Menu Navigation Styles */
+    /* Category Navigation Grid */
     .tabs-nav {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
       max-width: 1200px;
-      margin: 0 auto 20px auto;
-      overflow-x: auto;
-      padding-bottom: 5px;
-      -webkit-overflow-scrolling: touch;
+      margin: 0 auto 25px auto;
     }
 
     .tab-btn {
       background: #1e293b;
       color: #94a3b8;
       border: 1px solid #334155;
-      padding: 12px 24px;
-      border-radius: 30px;
+      padding: 15px 10px;
+      border-radius: 14px;
       cursor: pointer;
       font-weight: bold;
       font-size: 0.95rem;
       transition: all 0.3s ease;
-      white-space: nowrap;
       display: flex;
+      flex-direction: column;
       align-items: center;
+      justify-content: center;
       gap: 8px;
+      text-align: center;
+    }
+
+    .tab-btn span {
+      font-size: 1.4rem;
     }
 
     .tab-btn:hover {
@@ -114,9 +117,24 @@
       margin: auto;
       background: #1e293b;
       border-radius: 20px;
-      padding: 20px;
+      padding: 25px;
       box-shadow: 0 0 30px rgba(0, 0, 0, .4);
-      min-height: 300px; 
+      min-height: 350px; 
+    }
+
+    /* Sub-header inside panels to organize multiple widgets */
+    .widget-group-title {
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+      color: #38bdf8;
+      border-left: 4px solid #38bdf8;
+      padding-left: 10px;
+    }
+
+    .widget-divider {
+      margin: 35px 0;
+      border: 0;
+      border-top: 1px dashed #334155;
     }
 
     /* Tab Content Controls */
@@ -142,99 +160,120 @@
       font-size: .9rem;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 900px) {
+      .tabs-nav {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
       .hero h1 {
         font-size: 2.2rem;
       }
-
-      .hero p {
-        font-size: 1rem;
-      }
-
       .tabs-nav {
-        justify-content: flex-start;
-        padding-left: 5px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
       }
-
       .tab-btn {
-        padding: 10px 18px;
+        padding: 12px 8px;
         font-size: 0.85rem;
       }
-      
       .widget-container {
-        min-height: 480px; 
-        padding: 10px;
+        min-height: 500px;
+        padding: 15px;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Hero Section -->
   <section class="hero">
-    <h1>Your Complete Travel Booking Hub</h1>
+    <h1>The Ultimate Travel Booking Hub</h1>
     <p>
-      Compare flight options, plan unforgettable tours, book private transfers, or reserve car rentals at the guaranteed best rates.
+      Your all-in-one destination for flights, hotels, tour activities, transfers, and total travel protection.
     </p>
     <a href="#search" class="cta">
-      Explore Deals
+      Start Booking
     </a>
   </section>
 
-  <!-- Search Widget & Tab Section -->
   <section class="widget-section" id="search">
     
-    <!-- Tab Controls Navigation -->
     <div class="tabs-nav">
-      <button class="tab-btn active" onclick="switchTab(event, 'flights-tab')">✈️ Flights</button>
-      <button class="tab-btn" onclick="switchTab(event, 'tours-tab')">🏛️ Tours</button>
-      <button class="tab-btn" onclick="switchTab(event, 'transport-tab')">🚍 Transfers</button>
-      <button class="tab-btn" onclick="switchTab(event, 'cars-tab')">🚗 Car Rentals</button>
+      <button class="tab-btn active" onclick="switchTab(event, 'flights-panel')"><span>✈️</span>Flights</button>
+      <button class="tab-btn" onclick="switchTab(event, 'hotels-panel')"><span>🏨</span>Hotels & Stays</button>
+      <button class="tab-btn" onclick="switchTab(event, 'tours-panel')"><span>🏛️</span>Tours & Things to Do</button>
+      <button class="tab-btn" onclick="switchTab(event, 'transport-panel')"><span>🚍</span>Transfers & Cars</button>
+      <button class="tab-btn" onclick="switchTab(event, 'insurance-panel')"><span>🛡️</span>Insurance & Extras</button>
     </div>
 
-    <!-- Central Widget Rendering Container -->
     <div class="widget-container">
 
-      <!-- Panel 1: Flights (Kiwi Widget) -->
-      <div id="flights-tab" class="tab-panel active">
+      <div id="flights-panel" class="tab-panel active">
+        <h3 class="widget-group-title">Compare Worldwide Flights</h3>
         <script async src="https://tpscr.com/content?currency=usd&trs=534178&shmarker=733931&locale=en&powered_by=true&limit=4&primary_color=00AE98&results_background_color=FFFFFF&form_background_color=FFFFFF&campaign_id=111&promo_id=3411" charset="utf-8"></script>
       </div>
 
-      <!-- Panel 2: Tours Widget -->
-      <div id="tours-tab" class="tab-panel">
+      <div id="hotels-panel" class="tab-panel">
+        <h3 class="widget-group-title">Find Hotel Deals & Accommodations</h3>
+        <script async src="https://tpscr.com/content?trs=534178&shmarker=733931&locale=en&powered_by=true&color_button=%23f2685f&color_focused=%23f2685f&secondary=%23FFFFFF&dark=%2311100f&light=%23FFFFFF&special=%23C4C4C4&border_radius=5&plain=false&no_labels=true&promo_id=8588&campaign_id=541" charset="utf-8"></script>
+        
+        <hr class="widget-divider">
+        
+        <h3 class="widget-group-title">Popular Hotel Selection</h3>
+        <script async src="https://tpscr.com/content?currency=USD&trs=534178&shmarker=733931&language=en&locale=en&layout=horizontal&cards=4&powered_by=true&campaign_id=89&promo_id=3947" charset="utf-8"></script>
+      </div>
+
+      <div id="tours-panel" class="tab-panel">
+        <h3 class="widget-group-title">Local Sightseeing & Experiences</h3>
         <script async src="https://tpscr.com/content?currency=USD&trs=534178&shmarker=733931&locale=en&city_id=2&category=4&amount=3&powered_by=true&campaign_id=137&promo_id=4497" charset="utf-8"></script>
+        
+        <hr class="widget-divider">
+        
+        <h3 class="widget-group-title">Top-Rated Global Activities</h3>
+        <script async src="https://tpscr.com/content?trs=534178&shmarker=733931&locale=en&tours=3&powered_by=true&campaign_id=150&promo_id=4489" charset="utf-8"></script>
       </div>
 
-      <!-- Panel 3: Transportation / Kiwitaxi Widget -->
-      <div id="transport-tab" class="tab-panel">
+      <div id="transport-panel" class="tab-panel">
+        <h3 class="widget-group-title">Book Private Airport Transfers</h3>
         <script async src="https://tpscr.com/content?currency=USD&trs=534178&shmarker=733931&locale=en&from=&to=&country=&powered_by=true&height=&wtype=true&transfers_limit=10&bg_color=%23f5f5f5&button_color=%23239a54&button_font_color=%23ffffff&button_hover_color=%230274da&border_color=%23f9ac1a&input_font_color=%23c8ced4&input_bg_color=%23ffffff&input_label_color=%23c8ced4&icon_bg_color=%23ffffff&icon_arrow_color=%236c7c8c&icon_bg_color_mobile=%23f9ac1a&icon_arrow_color_mobile=%23ffffff&autocomplete_font_color=%23373f47&autocomplete_bg_color=%23ffffff&autocomplete_font_color_active=%23ffffff&autocomplete_bg_color_active=%23239a54&loader_color=%23f9ac1a&empty_color=%23373f47&info_bg_color=%23fff0cc&info_icon_color=%234a4a4a&info_caption_color=%234a4a4a&class_background=%23ffffff&class_font_color=%23373f47&class_header_color=%236c7c8c&class_button_background=%2326a65b&class_button_font_color=%23ffffff&class_button_background_hover=%230274da&class_comment_background=%23bfc0c4&class_comment_font=%23bfc0c4&more_background=&more_background_hover=&more_font_color=%230267c1&notification_background=%23f6f1ec&notification_border_color=%23e37f17&notification_color=%23373f47&campaign_id=1&promo_id=2949" charset="utf-8"></script>
+        
+        <hr class="widget-divider">
+        
+        <h3 class="widget-group-title">Compare Cheap Rental Cars</h3>
+        <script async src="https://tpscr.com/content?trs=534178&shmarker=733931&powered_by=true&country=153&lang=en&width=100&background=light&logo=true&header=true&gearbox=false&cars=false&border=true&footer=true&campaign_id=87&promo_id=4322" charset="utf-8"></script>
+        
+        <hr class="widget-divider">
+        
+        <h3 class="widget-group-title">Alternative Multi-City Car Rentals</h3>
+        <script async src="https://tpscr.com/content?trs=534178&shmarker=733931&locale=en&powered_by=true&border_radius=5&plain=true&color_background=%23ffffff&color_button=%23f2685f&promo_id=5472&campaign_id=57" charset="utf-8"></script>
       </div>
 
-      <!-- Panel 4: Car Rental Widget -->
-      <div id="cars-tab" class="tab-panel">
-        <script async src="https://tpscr.com/content?trs=534178&shmarker=733931&powered_by=true&country=153&lang=en&width=100&background=light&logo=true&header=true&gearbox=false&cars=false&border=true&footer=true&campaign_id=87&promo_id=4322" charset="utf-8"></script>
+      <div id="insurance-panel" class="tab-panel">
+        <h3 class="widget-group-title">Travel Insurance Protection</h3>
+        <script async src="https://tpscr.com/content?trs=534178&shmarker=733931&locale=en&show_header=true&powered_by=true&campaign_id=627&promo_id=8951" charset="utf-8"></script>
+        
+        <hr class="widget-divider">
+        
+        <h3 class="widget-group-title">International Compensation & Travel Services</h3>
+        <script src="https://tp.media/content?campaign_id=222&promo_id=8813&shmarker=733931&trs=534178" charset="utf-8"></script>
       </div>
 
     </div>
   </section>
 
-  <!-- Footer Section -->
   <footer>
     &copy; 2026 Travel Deals. All rights reserved.
   </footer>
 
-  <!-- Simple JavaScript to control tab toggles -->
   <script>
     function switchTab(event, tabId) {
-      // Hide all panels
       const panels = document.querySelectorAll('.tab-panel');
       panels.forEach(panel => panel.classList.remove('active'));
 
-      // Remove active state from all buttons
       const buttons = document.querySelectorAll('.tab-btn');
       buttons.forEach(btn => btn.classList.remove('active'));
 
-      // Display the selected tab panel and set button active
       document.getElementById(tabId).classList.add('active');
       event.currentTarget.classList.add('active');
     }
