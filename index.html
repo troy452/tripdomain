@@ -24,7 +24,7 @@
     }
 
     .hero {
-      min-height: 60vh;
+      min-height: 65vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -66,7 +66,7 @@
     }
 
     .widget-section {
-      padding: 40px 15px 40px 15px;
+      padding: 40px 15px 80px 15px;
       background: #111827;
     }
 
@@ -119,7 +119,7 @@
       border-radius: 20px;
       padding: 25px;
       box-shadow: 0 0 30px rgba(0, 0, 0, .4);
-      min-height: 300px; 
+      min-height: 350px; 
     }
 
     .widget-group-title {
@@ -136,7 +136,7 @@
       border-top: 1px dashed #334155;
     }
 
-    /* Tab Content Controls */
+    /* Tab Panels */
     .tab-panel {
       display: none;
       animation: fadeIn 0.4s ease;
@@ -144,24 +144,6 @@
 
     .tab-panel.active {
       display: block;
-    }
-
-    /* Trending Section Bottom Layout */
-    .trending-section {
-      padding: 60px 15px;
-      background: #0f172a;
-    }
-    
-    .trending-content {
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .section-title {
-      font-size: 2rem;
-      text-align: center;
-      margin-bottom: 40px;
-      color: white;
     }
 
     @keyframes fadeIn {
@@ -207,7 +189,7 @@
   <!-- Hero Section -->
   <section class="hero">
     <h1>The Ultimate Travel Booking Hub</h1>
-    <p>Your all-in-one destination for flights, hotels, tour activities, transfers, and total travel protection.</p>
+    <p>Your all-in-one destination for flights, hotels, tour activities, car hires, and stadium events.</p>
     <a href="#search" class="cta">Start Booking</a>
   </section>
 
@@ -215,85 +197,104 @@
   <section class="widget-section" id="search">
     
     <div class="tabs-nav">
-      <button class="tab-btn active" onclick="switchTab(event, 'flights-panel')"><span>✈️</span>Flights</button>
-      <button class="tab-btn" onclick="switchTab(event, 'hotels-panel')"><span>🏨</span>Hotels & Stays</button>
-      <button class="tab-btn" onclick="switchTab(event, 'tours-panel')"><span>🏛️</span>Tours & Activities</button>
-      <button class="tab-btn" onclick="switchTab(event, 'transport-panel')"><span>🚍</span>Transfers & Cars</button>
+      <button class="tab-btn active" onclick="switchTab(event, 'flights-panel')"><span>✈️</span>Flights & Hotels</button>
+      <button class="tab-btn" onclick="switchTab(event, 'hotels-panel')"><span>🏨</span>Hotels Selection</button>
+      <button class="tab-btn" onclick="switchTab(event, 'tours-panel')"><span>🏛️</span>Tours & Sports</button>
+      <button class="tab-btn" onclick="switchTab(event, 'transport-panel')"><span>🚗</span>Car Rentals & Transfers</button>
       <button class="tab-btn" onclick="switchTab(event, 'insurance-panel')"><span>🛡️</span>eSIM & Extras</button>
     </div>
 
     <div class="widget-container">
 
-      <!-- CATEGORY 1: FLIGHTS -->
+      <!-- CATEGORY 1: FLIGHTS & HOTELS -->
       <div id="flights-panel" class="tab-panel active">
-        <h3 class="widget-group-title">Compare Worldwide Flights</h3>
-        <!-- Kiwi Flight Search Widget -->
+        <h3 class="widget-group-title">Search Flights & Hotel Packages</h3>
+        <!-- Aviasales Integrated Search Form Widget (Promo 7879) -->
+        <script async src="https://tpscr.com/content?currency=usd&trs=534178&shmarker=733931&show_hotels=true&powered_by=true&locale=en&searchUrl=www.aviasales.com%2Fsearch&primary_override=%2332a8dd&color_button=%2332a8dd&color_icons=%2332a8dd&dark=%23262626&light=%23FFFFFF&secondary=%23FFFFFF&special=%23C4C4C4&color_focused=%2332a8dd&border_radius=0&plain=false&promo_id=7879&campaign_id=100" charset="utf-8"></script>
+
+        <hr class="widget-divider">
+
+        <h3 class="widget-group-title">Alternative Global Routes</h3>
+        <!-- Kiwi Flight Search Widget (Promo 3411) -->
         <script async src="https://tpscr.com/content?currency=usd&trs=534178&shmarker=733931&locale=en&powered_by=true&limit=4&primary_color=00AE98&results_background_color=FFFFFF&form_background_color=FFFFFF&campaign_id=111&promo_id=3411" charset="utf-8"></script>
       </div>
 
-      <!-- CATEGORY 2: HOTELS & STAYS -->
+      <!-- CATEGORY 2: HOTELS SELECTION -->
       <div id="hotels-panel" class="tab-panel">
-        <h3 class="widget-group-title">Find Hotel Deals & Accommodations</h3>
-        <!-- Fixed: Put a fallback layout text or alternative link frame here if dashboard setup changes -->
-        <p style="color: #94a3b8; margin-bottom: 15px; font-size: 0.95rem;">Search and match the best accommodation values globally.</p>
-        <!-- Your secondary car/travel block that acts as a robust tool form -->
+        <h3 class="widget-group-title">Browse Top Hotel Destinations</h3>
+        <!-- Hotellook Grid Cards Widget (Promo 3947) -->
+        <script async src="https://tpscr.com/content?currency=USD&trs=534178&shmarker=733931&language=en&locale=en&layout=horizontal&cards=4&powered_by=true&campaign_id=89&promo_id=3947&destination=London%2C%20Paris%2C%20New%20York%2C%20Dubai" charset="utf-8"></script>
+        
+        <hr class="widget-divider">
+        
+        <h3 class="widget-group-title">Alternative Hotel Accommodations</h3>
+        <!-- Multi-City Widget Form (Promo 5472) -->
         <script async src="https://tpscr.com/content?trs=534178&shmarker=733931&locale=en&powered_by=true&border_radius=5&plain=true&color_background=%23ffffff&color_button=%23f2685f&promo_id=5472&campaign_id=57" charset="utf-8"></script>
       </div>
 
-      <!-- CATEGORY 3: TOURS & ACTIVITIES -->
+      <!-- CATEGORY 3: TOURS & SPORTS -->
       <div id="tours-panel" class="tab-panel">
-        <h3 class="widget-group-title">Local Sightseeing & Experiences</h3>
+        <h3 class="widget-group-title">Search Local Sightseeing & Guided Day Trips</h3>
+        <!-- GetYourGuide Clean Search Bar Widget (Promo 4362) -->
+        <script async src="https://tpscr.com/content?trs=534178&shmarker=733931&locale=en&powered_by=true&border_radius=5&plain=true&show_logo=true&color_background=%230b2033&color_button=%23e8b917&promo_id=4362&campaign_id=143" charset="utf-8"></script>
+
+        <hr class="widget-divider">
+
+        <h3 class="widget-group-title">Live Football & Sports Event Tickets</h3>
+        <!-- Ticket Network / Sports Event Widget (Promo 6086) -->
+        <script async src="https://tpscr.com/content?trs=534178&shmarker=733931&keyword=Soccer&results=10&powered_by=true&campaign_id=72&promo_id=6086" charset="utf-8"></script>
+        
+        <hr class="widget-divider">
+        
+        <h3 class="widget-group-title">Recommended Regional Experiences</h3>
         <!-- Original working Tours Finder (Promo 4497) -->
         <script async src="https://tpscr.com/content?currency=USD&trs=534178&shmarker=733931&locale=en&city_id=2&category=4&amount=3&powered_by=true&campaign_id=137&promo_id=4497" charset="utf-8"></script>
       </div>
 
-      <!-- CATEGORY 4: TRANSFERS & CARS -->
+      <!-- CATEGORY 4: CAR RENTALS & TRANSFERS -->
       <div id="transport-panel" class="tab-panel">
-        <h3 class="widget-group-title">Book Private Airport Transfers</h3>
-        <script async src="https://tpscr.com/content?currency=USD&trs=534178&shmarker=733931&locale=en&from=&to=&country=&powered_by=true&height=&wtype=true&transfers_limit=10&bg_color=%23f5f5f5&button_color=%23239a54&button_font_color=%23ffffff&button_hover_color=%230274da&border_color=%23f9ac1a&input_font_color=%23c8ced4&input_bg_color=%23ffffff&input_label_color=%23c8ced4&icon_bg_color=%23ffffff&icon_arrow_color=%236c7c8c&icon_bg_color_mobile=%23f9ac1a&icon_arrow_color_mobile=%23ffffff&autocomplete_font_color=%23373f47&autocomplete_bg_color=%23ffffff&autocomplete_font_color_active=%23ffffff&autocomplete_bg_color_active=%23239a54&loader_color=%23f9ac1a&empty_color=%23373f47&info_bg_color=%23fff0cc&info_icon_color=%234a4a4a&info_caption_color=%234a4a4a&class_background=%23ffffff&class_font_color=%23373f47&class_header_color=%236c7c8c&class_button_background=%2326a65b&class_button_font_color=%23ffffff&class_button_background_hover=%230274da&class_comment_background=%23bfc0c4&class_comment_font=%23bfc0c4&more_background=&more_background_hover=&more_font_color=%230267c1&notification_background=%23f6f1ec&notification_border_color=%23e37f17&notification_color=%23373f47&campaign_id=1&promo_id=2949" charset="utf-8"></script>
+        <h3 class="widget-group-title">Compare Cheap Car Rental Deals</h3>
+        <!-- RentalCars.com Search Banner (Promo 3408) -->
+        <script async src="https://tpscr.com/content?trs=534178&shmarker=733931&locale=en&border_radius=5&plain=true&powered_by=true&promo_id=3408&campaign_id=86" charset="utf-8"></script>
+
+        <hr class="widget-divider">
+
+        <h3 class="widget-group-title">Discover Car Hire Offers</h3>
+        <!-- Discover Cars Descriptive Info Block (Promo 1504) -->
+        <script async src="//tpscr.com/content?trs=534178&shmarker=733931&locale=en&powered_by=true&color_scheme=bg&header=%D0%9E%D1%82%D0%BB%D0%B8%D1%87%D0%BD%D1%8B%D0%B9%20%D1%81%D0%BF%D0%BE%D1%81%D0%BE%D0%B1%20%D1%83%D0%BB%D1%83%D1%87%D1%88%D0%B8%D1%82%D1%8C%20%D0%BF%D1%83%D1%82%D0%B5%D1%88%D0%B5%D1%81%D1%82%D0%B2%D0%B8%D0%B5&b_counter=true&b_benefit=true&b_descr=true&b_about=true&b_map=true&b_reviews=true&b_breadcrumbs=true&b_poweredby=true&b_numbers=true&b_trustpilot=true&b_assortment=true&b_reliable=true&b_extended=true&b_how=true&b_faq=true&b_why=true&b_easybook=true&campaign_id=22&promo_id=1504" charset="utf-8"></script>
+
+        <hr class="widget-divider">
+
+        <h3 class="widget-group-title">Alternative Airport Transfer Bookings</h3>
+        <!-- EconomyBookings Car Rental Engine (Promo 4322) -->
+        <script async src="https://tpscr.com/content?trs=534178&shmarker=733931&powered_by=true&country=153&lang=en&width=100&background=light&logo=true&header=true&gearbox=false&cars=false&border=true&footer=true&campaign_id=87&promo_id=4322" charset="utf-8"></script>
         
         <hr class="widget-divider">
         
-        <h3 class="widget-group-title">Compare Cheap Rental Cars</h3>
-        <script async src="https://tpscr.com/content?trs=534178&shmarker=733931&powered_by=true&country=153&lang=en&width=100&background=light&logo=true&header=true&gearbox=false&cars=false&border=true&footer=true&campaign_id=87&promo_id=4322" charset="utf-8"></script>
+        <h3 class="widget-group-title">Private Airport Transfers</h3>
+        <!-- Kiwitaxi / Transportation Interface (Promo 2949) -->
+        <script async src="https://tpscr.com/content?currency=USD&trs=534178&shmarker=733931&locale=en&from=&to=&country=&powered_by=true&height=&wtype=true&transfers_limit=10&bg_color=%23f5f5f5&button_color=%23239a54&button_font_color=%23ffffff&button_hover_color=%230274da&border_color=%23f9ac1a&input_font_color=%23c8ced4&input_bg_color=%23ffffff&input_label_color=%23c8ced4&icon_bg_color=%23ffffff&icon_arrow_color=%236c7c8c&icon_bg_color_mobile=%23f9ac1a&icon_arrow_color_mobile=%23ffffff&autocomplete_font_color=%23373f47&autocomplete_bg_color=%23ffffff&autocomplete_font_color_active=%23ffffff&autocomplete_bg_color_active=%23239a54&loader_color=%23f9ac1a&empty_color=%23373f47&info_bg_color=%23fff0cc&info_icon_color=%234a4a4a&info_caption_color=%234a4a4a&class_background=%23ffffff&class_font_color=%23373f47&class_header_color=%236c7c8c&class_button_background=%2326a65b&class_button_font_color=%23ffffff&class_button_background_hover=%230274da&class_comment_background=%23bfc0c4&class_comment_font=%23bfc0c4&more_background=&more_background_hover=&more_font_color=%230267c1&notification_background=%23f6f1ec&notification_border_color=%23e37f17&notification_color=%23373f47&campaign_id=1&promo_id=2949" charset="utf-8"></script>
       </div>
 
       <!-- CATEGORY 5: eSIM & EXTRAS -->
       <div id="insurance-panel" class="tab-panel">
         <h3 class="widget-group-title">International eSIM Data Packs</h3>
-        <!-- Moved Airalo here where it belongs! -->
+        <!-- Airalo Widgets (Promo 8588) -->
         <script async src="https://tpscr.com/content?trs=534178&shmarker=733931&locale=en&powered_by=true&color_button=%23f2685f&color_focused=%23f2685f&secondary=%23FFFFFF&dark=%2311100f&light=%23FFFFFF&special=%23C4C4C4&border_radius=5&plain=false&no_labels=true&promo_id=8588&campaign_id=541" charset="utf-8"></script>
         
         <hr class="widget-divider">
         
         <h3 class="widget-group-title">Travel Insurance Protection</h3>
+        <!-- EKTA Insurance (Promo 8951) -->
         <script async src="https://tpscr.com/content?trs=534178&shmarker=733931&locale=en&show_header=true&powered_by=true&campaign_id=627&promo_id=8951" charset="utf-8"></script>
         
         <hr class="widget-divider">
         
-        <h3 class="widget-group-title">Flight Compensation Services</h3>
+        <h3 class="widget-group-title">Flight Cancellation & Delay Compensation</h3>
+        <!-- Compensair Module (Promo 8813) -->
         <script src="https://tp.media/content?campaign_id=222&promo_id=8813&shmarker=733931&trs=534178" charset="utf-8"></script>
       </div>
 
-    </div>
-  </section>
-
-  <!-- NEW GLOBAL SECTION FOR DYNAMIC MULTI-OFFER CARDS -->
-  <section class="trending-section">
-    <div class="trending-content">
-      <h2 class="section-title">🔥 Featured Travel Deals Near You</h2>
-      
-      <div class="widget-container" style="margin-bottom: 30px;">
-        <h3 class="widget-group-title">Popular Hotel Selection</h3>
-        <!-- Placed globally so it triggers script auto-location generation flawlessly -->
-        <script async src="https://tpscr.com/content?currency=USD&trs=534178&shmarker=733931&language=en&locale=en&layout=horizontal&cards=4&powered_by=true&campaign_id=89&promo_id=3947" charset="utf-8"></script>
-      </div>
-
-      <div class="widget-container">
-        <h3 class="widget-group-title">Top-Rated Global Activities</h3>
-        <!-- Placed globally to allow script to pull trending geographical data automatically -->
-        <script async src="https://tpscr.com/content?trs=534178&shmarker=733931&locale=en&tours=3&powered_by=true&campaign_id=150&promo_id=4489" charset="utf-8"></script>
-      </div>
     </div>
   </section>
 
